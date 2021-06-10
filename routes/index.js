@@ -23,12 +23,12 @@ router.get("/", (req, res) => {
 });
 
 //UPDATE
-router.get((req, res) => {
+router.get("/edit/:id", (req, res) => {
     const id = req.params.id;
     TodoTask.find({}, (err, tasks) => {
         res.render("todoEdit.ejs", { todoTasks: tasks, idTask: id });
     });
-}).post((req, res) => {
+}).post("/edit/:id", (req, res) => {
     const id = req.params.id;
     TodoTask.findByIdAndUpdate(id, { content: req.body.content }, err => {
         if (err) return res.send(500, err);
