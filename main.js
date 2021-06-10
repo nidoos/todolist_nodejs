@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-
 var indexRouter = require('./routes/index');
 
 dotenv.config();
@@ -20,7 +19,7 @@ app.set("view engine", "ejs");
 
 app.use('/', indexRouter);
 
-app.post('/', (req, res) => {
+/* app.post('/', (req, res) => {
     console.log(req.body);
 })
-
+ */
